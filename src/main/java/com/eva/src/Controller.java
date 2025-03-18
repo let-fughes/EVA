@@ -1,4 +1,4 @@
-package com.eva.src.encrypt;
+package com.eva.src;
 
 import com.eva.Main;
 import javafx.event.ActionEvent;
