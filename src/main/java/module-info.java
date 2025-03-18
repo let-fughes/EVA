@@ -12,4 +12,6 @@ module com.protect.data.eva {
     exports com.eva;
     exports com.eva.src;
     opens com.eva.src to javafx.fxml;
+    exports com.eva.src.encrypt;
+    opens com.eva.src.encrypt to javafx.fxml;
 }

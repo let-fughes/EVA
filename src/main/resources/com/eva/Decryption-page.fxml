@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eva.src.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eva.src.encrypt.Controller">
    <children>
       <Pane layoutX="-7.0" layoutY="-7.0" prefHeight="481.0" prefWidth="305.0" style="-fx-background-color: #797979;">
          <children>
@@ -52,15 +52,15 @@
                   <Font name="FreeMono" size="17.0" />
                </font>
             </Label>
-            <TextField layoutX="35.0" layoutY="132.0" prefHeight="26.0" prefWidth="245.0" />
-            <Button layoutX="311.0" layoutY="132.0" mnemonicParsing="false" onAction="#Files" prefHeight="25.0" prefWidth="64.0" text="Browse" />
+            <TextField fx:id="D" layoutX="35.0" layoutY="132.0" prefHeight="26.0" prefWidth="245.0" />
+            <Button layoutX="311.0" layoutY="132.0" mnemonicParsing="false" onAction="#FilesD" prefHeight="25.0" prefWidth="64.0" text="Browse" />
             <Button layoutX="100.0" layoutY="300.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="206.0" text="Decrypt">
                <font>
                   <Font name="FreeMono" size="18.0" />
                </font>
             </Button>
-            <TextField layoutX="35.0" layoutY="228.0" prefHeight="26.0" prefWidth="245.0" />
-            <Button layoutX="311.0" layoutY="229.0" mnemonicParsing="false" onAction="#Files" prefHeight="25.0" prefWidth="64.0" text="Browse" />
+            <TextField fx:id="DD" layoutX="35.0" layoutY="228.0" prefHeight="26.0" prefWidth="245.0" />
+            <Button layoutX="311.0" layoutY="229.0" mnemonicParsing="false" onAction="#FilesDD" prefHeight="25.0" prefWidth="64.0" text="Browse" />
             <Label layoutX="35.0" layoutY="95.0" text="Select file:">
                <font>
                   <Font size="17.0" />

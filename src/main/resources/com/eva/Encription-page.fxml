@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eva.src.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eva.src.encrypt.Controller">
    <children>
       <Pane layoutX="-7.0" layoutY="-7.0" prefHeight="481.0" prefWidth="305.0" style="-fx-background-color: #797979;">
          <children>
@@ -62,9 +62,9 @@
                   <Font name="FreeMono" size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="E1" layoutX="14.0" layoutY="215.0" prefHeight="26.0" prefWidth="245.0" />
-            <TextField fx:id="E2" layoutX="14.0" layoutY="288.0" prefHeight="26.0" prefWidth="245.0" />
-            <TextField fx:id="E3" layoutX="10.0" layoutY="131.0" prefHeight="26.0" prefWidth="245.0" />
+            <TextField layoutX="14.0" layoutY="215.0" prefHeight="26.0" prefWidth="245.0" />
+            <TextField layoutX="14.0" layoutY="288.0" prefHeight="26.0" prefWidth="245.0" />
+            <TextField fx:id="SelectedFileToEncrypt" layoutX="10.0" layoutY="131.0" prefHeight="26.0" prefWidth="245.0" />
             <Button layoutX="271.0" layoutY="131.0" mnemonicParsing="false" onAction="#Files" prefHeight="25.0" prefWidth="58.0" text="Browse">
                <font>
                   <Font name="Cascadia Mono Regular" size="12.0" />
