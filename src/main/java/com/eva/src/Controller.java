@@ -24,11 +24,13 @@ public class Controller {
     public TextField privateKey;
 
 
+    //exit button
     public void ex(ActionEvent e){
         System.out.println("Exiting.");
         System.exit(0);
     }
 
+    //File Chooser Decryption 1
     public void FilesD(ActionEvent e){
         FileChooser fileChooser = new FileChooser();
         File selectedFile = fileChooser.showOpenDialog(stage);
@@ -40,6 +42,7 @@ public class Controller {
         }
     }
 
+    //File Chooser Decryption 2
     public void FilesDD(ActionEvent e){
         FileChooser fileChooser = new FileChooser();
         File selectedFile = fileChooser.showOpenDialog(stage);
@@ -51,6 +54,7 @@ public class Controller {
         }
     }
 
+    //File Chooser Encryption
     public void Files(ActionEvent e){
         FileChooser fileChooser = new FileChooser();
         File selectedFile = fileChooser.showOpenDialog(stage);
@@ -62,6 +66,7 @@ public class Controller {
         }
     }
 
+    //switch scene to encryption slide
     public void SwitchToScene2(ActionEvent e) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Encription-page.fxml"));
         stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
@@ -71,6 +76,7 @@ public class Controller {
         stage.show();
     }
 
+    //switch scene to decryption slide
     public void SwitchToScene3(ActionEvent e) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Decryption-page.fxml"));
         stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
@@ -80,7 +86,7 @@ public class Controller {
         stage.show();
     }
 
-    public void EncryptFile(){
+    public void EncryptFile() throws NoSuchAlgorithmException {
         //dir in user.home
         String path = System.getProperty("user.home") + File.separator + "EVA";
         File dir = new File(path);
@@ -103,7 +109,7 @@ public class Controller {
         }
 
         //creating privateKey folder
-        File privateKeyFile = new File(path + File.separator + "private Key");
+        File privateKeyFile = new File(path + File.separator + "privateKey");
         if(privateKeyFile.exists()){
             System.out.println(privateKeyFile + " is already exists.");
         } else if(privateKeyFile.mkdirs()){
@@ -112,8 +118,20 @@ public class Controller {
             System.out.println(privateKeyFile + " was not created.");
         }
 
+        //creating keys
+        Generate gen = new Generate();
+        gen.Genetate();
+
         //creating publicKey file
-        try (FileOutputStream fos = new FileOutputStream(path + File.separator + "publicKey" + File.separator + publicKey.getText() + ".eva")) {
+        try (FileOutputStream fos = new FileOutputStream(path + File.separator + "publicKey" + File.separator + publicKey.getText() + ".key")) {
+            fos.write(gen.getPublicKey().getEncoded());
+        } catch (Exception e){
+            System.out.println("Can not create a file.");
+        }
+
+        //creating privateKey file
+        try (FileOutputStream fos = new FileOutputStream(path + File.separator + "privateKey" + File.separator + privateKey.getText() + ".key")) {
+            fos.write(gen.getPrKey().getEncoded());
         } catch (Exception e){
             System.out.println("Can not create a file.");
         }

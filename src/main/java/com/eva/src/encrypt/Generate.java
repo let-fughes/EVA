@@ -7,6 +7,7 @@ public class Generate {
     private PrivateKey privateKey;
 
 
+    //genetrating keys
     private void generate() throws NoSuchAlgorithmException {
         KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
         generator.initialize(2048);
@@ -16,14 +17,17 @@ public class Generate {
         this.publicKey = pair.getPublic();
     }
 
+    //getting private key
     public PrivateKey getPrKey(){
         return privateKey;
     }
 
+    //getting public key
     public PublicKey getPublicKey(){
         return publicKey;
     }
 
+    //public foo for generating keys
     public void Genetate() throws NoSuchAlgorithmException {
         generate();
     }
