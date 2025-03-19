@@ -10,10 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.FileChooser;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.security.NoSuchAlgorithmException;
 
 public class Controller {
@@ -95,8 +92,8 @@ public class Controller {
             System.out.println(dir + " was not created.");
         }
 
-        //creating publicKey file
-        File publicKeyFile = new File(path + File.separator + publicKey.getText());
+        //creating publicKey folder
+        File publicKeyFile = new File(path + File.separator + "publicKey");
         if(publicKeyFile.exists()){
             System.out.println(publicKeyFile + " is already exists.");
         } else if(publicKeyFile.mkdirs()){
@@ -105,7 +102,8 @@ public class Controller {
             System.out.println(publicKeyFile + " was not created.");
         }
 
-        File privateKeyFile = new File(path + File.separator + privateKey.getText());
+        //creating privateKey folder
+        File privateKeyFile = new File(path + File.separator + "private Key");
         if(privateKeyFile.exists()){
             System.out.println(privateKeyFile + " is already exists.");
         } else if(privateKeyFile.mkdirs()){
@@ -114,6 +112,10 @@ public class Controller {
             System.out.println(privateKeyFile + " was not created.");
         }
 
-
+        //creating publicKey file
+        try (FileOutputStream fos = new FileOutputStream(path + File.separator + "publicKey" + File.separator + publicKey.getText() + ".eva")) {
+        } catch (Exception e){
+            System.out.println("Can not create a file.");
+        }
     }
 }
