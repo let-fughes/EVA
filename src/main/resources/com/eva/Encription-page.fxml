@@ -62,14 +62,14 @@
                   <Font name="FreeMono" size="17.0" />
                </font>
             </Label>
-            <TextField layoutX="14.0" layoutY="215.0" prefHeight="26.0" prefWidth="245.0" />
-            <TextField layoutX="14.0" layoutY="288.0" prefHeight="26.0" prefWidth="245.0" />
+            <TextField fx:id="publicKey" layoutX="14.0" layoutY="215.0" prefHeight="26.0" prefWidth="245.0" />
+            <TextField fx:id="privateKey" layoutX="14.0" layoutY="288.0" prefHeight="26.0" prefWidth="245.0" />
             <TextField fx:id="SelectedFileToEncrypt" layoutX="10.0" layoutY="131.0" prefHeight="26.0" prefWidth="245.0" />
             <Button layoutX="271.0" layoutY="131.0" mnemonicParsing="false" onAction="#Files" prefHeight="25.0" prefWidth="58.0" text="Browse">
                <font>
                   <Font name="Cascadia Mono Regular" size="12.0" />
                </font></Button>
-            <Button layoutX="100.0" layoutY="356.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="206.0" text="Encrypt">
+            <Button layoutX="100.0" layoutY="356.0" mnemonicParsing="false" onAction="#EncryptFile" prefHeight="38.0" prefWidth="206.0" text="Encrypt">
                <font>
                   <Font name="FreeMono" size="18.0" />
                </font>

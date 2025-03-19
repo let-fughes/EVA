@@ -17,7 +17,7 @@ public class EncryptLine {
 
     public String Encryption(String line) throws NoSuchAlgorithmException, InvalidKeyException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException {
         Generate gen = new Generate();
-        gen.Genetate(publicKey, privateKey);
+        //gen.Genetate(publicKey, privateKey);
 
         Cipher encryptCiper = Cipher.getInstance("RSA");
         encryptCiper.init(Cipher.ENCRYPT_MODE, publicKey);

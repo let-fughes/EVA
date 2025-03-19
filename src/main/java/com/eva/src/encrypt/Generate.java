@@ -16,17 +16,15 @@ public class Generate {
         this.publicKey = pair.getPublic();
     }
 
-    private PrivateKey getPrKey(){
+    public PrivateKey getPrKey(){
         return privateKey;
     }
 
-    private PublicKey getPublicKey(){
+    public PublicKey getPublicKey(){
         return publicKey;
     }
 
-    public void Genetate(PublicKey pu, PrivateKey pr) throws NoSuchAlgorithmException {
+    public void Genetate() throws NoSuchAlgorithmException {
         generate();
-        pu = getPublicKey();
-        pr = getPrKey();
     }
 }
